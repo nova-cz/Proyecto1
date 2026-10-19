@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pantalla"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <View
+        android:id="@+id/blob"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:background="@drawable/bg_blob"
+        android:translationX="120dp"
+        android:translationY="-60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnHistorial"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/key_fn"
+        android:contentDescription="Historial"
+        android:padding="13dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_historial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvModo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="Deg"
+        android:textColor="@color/texto_sub"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvResultado"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvExpresion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text="sin(30) + √16"
+        android:textColor="@color/texto_sub"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnHistorial"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="end|center_vertical"
+        android:maxLines="1"
+        android:text="4.5"
+        android:textColor="@color/texto"
+        app:autoSizeMaxTextSize="38sp"
+        app:autoSizeMinTextSize="18sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvModo"
+        app:layout_constraintTop_toBottomOf="@id/tvExpresion" />
+
+    <LinearLayout
+        android:id="@+id/panelTeclas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_panel"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvResultado">
+
+        <!-- Fila 1 -->
+        <LinearLayout style="@style/FilaL">
+            <TextView android:id="@+id/btnParAbre" style="@style/TeclaL.Fn" android:text="(" />
+            <TextView android:id="@+id/btnParCierra" style="@style/TeclaL.Fn" android:text=")" />
+            <TextView android:id="@+id/btnMC" style="@style/TeclaL.Fn" android:text="mc" />
+            <TextView android:id="@+id/btnMMas" style="@style/TeclaL.Fn" android:text="m+" />
+            <TextView android:id="@+id/btnMMenos" style="@style/TeclaL.Fn" android:text="m-" />
+            <TextView android:id="@+id/btnMR" style="@style/TeclaL.Fn" android:text="mr" />
+            <ImageButton android:id="@+id/btnBorrar" style="@style/TeclaL.Icono" android:src="@drawable/ic_borrar" android:contentDescription="Borrar" />
+            <TextView android:id="@+id/btnAC" style="@style/TeclaL.Fn" android:text="AC" />
+            <TextView android:id="@+id/btnPorcentaje" style="@style/TeclaL.Fn" android:text="%" />
+            <TextView android:id="@+id/btnDividir" style="@style/TeclaL.Op" android:text="÷" />
+        </LinearLayout>
+
+        <!-- Fila 2 -->
+        <LinearLayout style="@style/FilaL">
+            <TextView android:id="@+id/btn2nd" style="@style/TeclaL.Fn" android:text="2nd" />
+            <TextView android:id="@+id/btnCuadrado" style="@style/TeclaL.Fn" android:text="x²" />
+            <TextView android:id="@+id/btnCubo" style="@style/TeclaL.Fn" android:text="x³" />
+            <TextView android:id="@+id/btnPotencia" style="@style/TeclaL.Fn" android:text="xʸ" />
+            <TextView android:id="@+id/btnExp" style="@style/TeclaL.Fn" android:text="eˣ" />
+            <TextView android:id="@+id/btn10x" style="@style/TeclaL.Fn" android:text="10ˣ" />
+            <TextView android:id="@+id/btn7" style="@style/TeclaL.Num" android:text="7" />
+            <TextView android:id="@+id/btn8" style="@style/TeclaL.Num" android:text="8" />
+            <TextView android:id="@+id/btn9" style="@style/TeclaL.Num" android:text="9" />
+            <TextView android:id="@+id/btnMultiplicar" style="@style/TeclaL.Op" android:text="×" />
+        </LinearLayout>
+
+        <!-- Fila 3 -->
+        <LinearLayout style="@style/FilaL">
+            <TextView android:id="@+id/btnInverso" style="@style/TeclaL.Fn" android:text="1/x" />
+            <TextView android:id="@+id/btnRaiz2" style="@style/TeclaL.Fn" android:text="²√x" />
+            <TextView android:id="@+id/btnRaiz3" style="@style/TeclaL.Fn" android:text="³√x" />
+            <TextView android:id="@+id/btnRaizY" style="@style/TeclaL.Fn" android:text="ʸ√x" />
+            <TextView android:id="@+id/btnLn" style="@style/TeclaL.Fn" android:text="ln" />
+            <TextView android:id="@+id/btnLog" style="@style/TeclaL.Fn" android:text="log₁₀" />
+            <TextView android:id="@+id/btn4" style="@style/TeclaL.Num" android:text="4" />
+            <TextView android:id="@+id/btn5" style="@style/TeclaL.Num" android:text="5" />
+            <TextView android:id="@+id/btn6" style="@style/TeclaL.Num" android:text="6" />
+            <TextView android:id="@+id/btnRestar" style="@style/TeclaL.Op" android:text="−" />
+        </LinearLayout>
+
+        <!-- Fila 4 -->
+        <LinearLayout style="@style/FilaL">
+            <TextView android:id="@+id/btnFactorial" style="@style/TeclaL.Fn" android:text="x!" />
+            <TextView android:id="@+id/btnSin" style="@style/TeclaL.Fn" android:text="sin" />
+            <TextView android:id="@+id/btnCos" style="@style/TeclaL.Fn" android:text="cos" />
+            <TextView android:id="@+id/btnTan" style="@style/TeclaL.Fn" android:text="tan" />
+            <TextView android:id="@+id/btnE" style="@style/TeclaL.Fn" android:text="e" />
+            <TextView android:id="@+id/btnEE" style="@style/TeclaL.Fn" android:text="EE" />
+            <TextView android:id="@+id/btn1" style="@style/TeclaL.Num" android:text="1" />
+            <TextView android:id="@+id/btn2" style="@style/TeclaL.Num" android:text="2" />
+            <TextView android:id="@+id/btn3" style="@style/TeclaL.Num" android:text="3" />
+            <TextView android:id="@+id/btnSumar" style="@style/TeclaL.Op" android:text="+" />
+        </LinearLayout>
+
+        <!-- Fila 5 -->
+        <LinearLayout style="@style/FilaL">
+            <TextView android:id="@+id/btnRand" style="@style/TeclaL.Fn" android:text="Rand" />
+            <TextView android:id="@+id/btnSinh" style="@style/TeclaL.Fn" android:text="sinh" />
+            <TextView android:id="@+id/btnCosh" style="@style/TeclaL.Fn" android:text="cosh" />
+            <TextView android:id="@+id/btnTanh" style="@style/TeclaL.Fn" android:text="tanh" />
+            <TextView android:id="@+id/btnPi" style="@style/TeclaL.Fn" android:text="π" />
+            <TextView android:id="@+id/btnRad" style="@style/TeclaL.Fn" android:text="Rad" />
+            <TextView android:id="@+id/btnSigno" style="@style/TeclaL.Num" android:text="+/−" />
+            <TextView android:id="@+id/btn0" style="@style/TeclaL.Num" android:text="0" />
+            <TextView android:id="@+id/btnPunto" style="@style/TeclaL.Num" android:text="." />
+            <TextView android:id="@+id/btnIgual" style="@style/TeclaL.Igual" android:text="=" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

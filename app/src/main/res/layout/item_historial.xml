@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/bg_tarjeta"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="end"
+    android:orientation="vertical"
+    android:paddingHorizontal="14dp"
+    android:paddingVertical="10dp"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/tvItemExpresion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sin(30)+√(16)"
+        android:textColor="@color/texto_sub"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tvItemResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="= 4.5"
+        android:textColor="@color/texto"
+        android:textSize="24sp" />
+
+</LinearLayout>

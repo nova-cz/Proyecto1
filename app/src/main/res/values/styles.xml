@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base de todas las teclas -->
+    <style name="Tecla">
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:textSize">@dimen/tecla_texto</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Números, punto y +/− -->
+    <style name="Tecla.Num">
+        <item name="android:background">@drawable/key_num</item>
+        <item name="android:textColor">@color/tecla_num_texto</item>
+    </style>
+
+    <!-- Funciones: AC, %, sin, ln, paréntesis... -->
+    <style name="Tecla.Fn">
+        <item name="android:background">@drawable/key_fn</item>
+        <item name="android:textColor">@color/tecla_fn_texto</item>
+        <item name="android:textSize">@dimen/tecla_texto_fn</item>
+    </style>
+
+    <!-- Operadores: ÷ × − + -->
+    <style name="Tecla.Op">
+        <item name="android:background">@drawable/key_op</item>
+        <item name="android:textColor">@color/tecla_op_texto</item>
+        <item name="android:textSize">@dimen/tecla_texto_op</item>
+    </style>
+
+    <!-- Igual -->
+    <style name="Tecla.Igual">
+        <item name="android:background">@drawable/key_igual</item>
+        <item name="android:textColor">@color/tecla_igual_texto</item>
+        <item name="android:textSize">@dimen/tecla_texto_op</item>
+    </style>
+
+    <!-- Tecla con ícono (borrar) -->
+    <style name="Tecla.Icono">
+        <item name="android:background">@drawable/key_fn</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:padding">@dimen/tecla_icono_padding</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Teclas de landscape: mismas que arriba + tamaño dentro de las filas -->
+    <style name="TeclaL.Num" parent="Tecla.Num">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="TeclaL.Fn" parent="Tecla.Fn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="TeclaL.Op" parent="Tecla.Op">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="TeclaL.Igual" parent="Tecla.Igual">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="TeclaL.Icono" parent="Tecla.Icono">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <!-- Cada fila del teclado landscape -->
+    <style name="FilaL">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+</resources>

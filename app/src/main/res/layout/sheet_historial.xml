@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_hoja"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="28dp"
+    tools:ignore="HardcodedText">
+
+    <!-- Rayita para arrastrar -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.35"
+        android:background="@color/texto_sub" />
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="Historial"
+            android:textColor="@color/texto"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/btnListo"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingHorizontal="8dp"
+            android:text="Listo"
+            android:textColor="@color/tecla_op_texto"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Mensaje cuando no hay operaciones -->
+    <TextView
+        android:id="@+id/tvVacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="32dp"
+        android:text="Aún no hay operaciones"
+        android:textColor="@color/texto_sub"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <!-- Lista de operaciones -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/listaHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- Borrar todo -->
+    <TextView
+        android:id="@+id/btnBorrarHistorial"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/key_num"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Borrar historial"
+        android:textColor="@color/error"
+        android:textSize="15sp" />
+
+</LinearLayout>

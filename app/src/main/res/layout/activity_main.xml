@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pantalla"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <!-- Círculo azul difuminado detrás del teclado -->
+    <View
+        android:id="@+id/blob"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:background="@drawable/bg_blob"
+        android:translationX="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/panelTeclas"
+        app:layout_constraintBottom_toTopOf="@id/panelTeclas" />
+
+    <!-- Botón de historial -->
+    <ImageButton
+        android:id="@+id/btnHistorial"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/key_fn"
+        android:contentDescription="Historial"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_historial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Display -->
+    <TextView
+        android:id="@+id/tvExpresion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="4dp"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:maxLines="2"
+        android:text="6000 ÷ 2 + 3227 × 2"
+        android:textColor="@color/texto_sub"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tvResultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="end|center_vertical"
+        android:maxLines="1"
+        android:text="9,454"
+        android:textColor="@color/texto"
+        app:autoSizeMaxTextSize="64sp"
+        app:autoSizeMinTextSize="28sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/panelTeclas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Panel glass con el teclado -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/panelTeclas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_panel"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Fila 1 -->
+        <ImageButton
+            android:id="@+id/btnBorrar"
+            style="@style/Tecla.Icono"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:contentDescription="Borrar"
+            android:src="@drawable/ic_borrar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnAC"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btnAC"
+            style="@style/Tecla.Fn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:text="AC"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnPorcentaje"
+            app:layout_constraintStart_toEndOf="@id/btnBorrar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btnPorcentaje"
+            style="@style/Tecla.Fn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:text="%"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnDividir"
+            app:layout_constraintStart_toEndOf="@id/btnAC"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btnDividir"
+            style="@style/Tecla.Op"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:text="÷"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnPorcentaje"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Fila 2 -->
+        <TextView
+            android:id="@+id/btn7"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btn8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBorrar" />
+
+        <TextView
+            android:id="@+id/btn8"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btn9"
+            app:layout_constraintStart_toEndOf="@id/btn7"
+            app:layout_constraintTop_toBottomOf="@id/btnAC" />
+
+        <TextView
+            android:id="@+id/btn9"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="9"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnMultiplicar"
+            app:layout_constraintStart_toEndOf="@id/btn8"
+            app:layout_constraintTop_toBottomOf="@id/btnPorcentaje" />
+
+        <TextView
+            android:id="@+id/btnMultiplicar"
+            style="@style/Tecla.Op"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="×"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn9"
+            app:layout_constraintTop_toBottomOf="@id/btnDividir" />
+
+        <!-- Fila 3 -->
+        <TextView
+            android:id="@+id/btn4"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btn5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn7" />
+
+        <TextView
+            android:id="@+id/btn5"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btn6"
+            app:layout_constraintStart_toEndOf="@id/btn4"
+            app:layout_constraintTop_toBottomOf="@id/btn8" />
+
+        <TextView
+            android:id="@+id/btn6"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="6"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnRestar"
+            app:layout_constraintStart_toEndOf="@id/btn5"
+            app:layout_constraintTop_toBottomOf="@id/btn9" />
+
+        <TextView
+            android:id="@+id/btnRestar"
+            style="@style/Tecla.Op"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="−"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn6"
+            app:layout_constraintTop_toBottomOf="@id/btnMultiplicar" />
+
+        <!-- Fila 4 -->
+        <TextView
+            android:id="@+id/btn1"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btn2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn4" />
+
+        <TextView
+            android:id="@+id/btn2"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btn3"
+            app:layout_constraintStart_toEndOf="@id/btn1"
+            app:layout_constraintTop_toBottomOf="@id/btn5" />
+
+        <TextView
+            android:id="@+id/btn3"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnSumar"
+            app:layout_constraintStart_toEndOf="@id/btn2"
+            app:layout_constraintTop_toBottomOf="@id/btn6" />
+
+        <TextView
+            android:id="@+id/btnSumar"
+            style="@style/Tecla.Op"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="+"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn3"
+            app:layout_constraintTop_toBottomOf="@id/btnRestar" />
+
+        <!-- Fila 5 -->
+        <TextView
+            android:id="@+id/btnSigno"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="+/−"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btn0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn1" />
+
+        <TextView
+            android:id="@+id/btn0"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnPunto"
+            app:layout_constraintStart_toEndOf="@id/btnSigno"
+            app:layout_constraintTop_toBottomOf="@id/btn2" />
+
+        <TextView
+            android:id="@+id/btnPunto"
+            style="@style/Tecla.Num"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/btnIgual"
+            app:layout_constraintStart_toEndOf="@id/btn0"
+            app:layout_constraintTop_toBottomOf="@id/btn3" />
+
+        <TextView
+            android:id="@+id/btnIgual"
+            style="@style/Tecla.Igual"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="12dp"
+            android:text="="
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnPunto"
+            app:layout_constraintTop_toBottomOf="@id/btnSumar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

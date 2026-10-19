@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Fondo -->
+    <color name="fondo_inicio">#FFE3EEF8</color>
+    <color name="fondo_fin">#FFC6DBEF</color>
+    <color name="blob">#BF1E88E5</color>
+
+    <!-- Panel glass -->
+    <color name="panel">#61FFFFFF</color>
+    <color name="borde">#CCFFFFFF</color>
+
+    <!-- Teclas -->
+    <color name="tecla_num">#99FFFFFF</color>
+    <color name="tecla_num_texto">#FF2B4A66</color>
+    <color name="tecla_fn">#4DFFFFFF</color>
+    <color name="tecla_fn_texto">#FF5E7D99</color>
+    <color name="tecla_op">#73FFFFFF</color>
+    <color name="tecla_op_texto">#FF1E88E5</color>
+    <color name="tecla_igual">#FF1E88E5</color>
+    <color name="tecla_igual_texto">#FFFFFFFF</color>
+
+    <!-- Display -->
+    <color name="texto">#FF14283D</color>
+    <color name="texto_sub">#FF5E7D99</color>
+    <color name="error">#FFD64545</color>
+</resources>
